@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحديث تلقائي للتضمين</title>
+    <style>
+        /* إعدادات تجعل iframe يغطي كامل الشاشة */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* يمنع التمرير */
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <script>
+        // تحديث iframe كل 15 ثانية
+        setInterval(() => {
+            const iframe = document.getElementById('zohosheet-iframe');
+            iframe.src = iframe.src; // إعادة تحميل iframe فقط
+        }, 15000);
+    </script>
+</head>
+<body>
+    <iframe 
+        id="zohosheet-iframe"
+        src="https://sheet.zohopublic.com/sheet/published/i80gm16fac887eecb4a309fe38c7c92b9d45c">
+    </iframe>
+</body>
+</html>
